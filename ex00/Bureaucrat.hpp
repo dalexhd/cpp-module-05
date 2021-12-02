@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 19:32:02 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/01 20:03:51 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/02 16:56:29 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,15 @@
 			size_t	getGrade(void);
 			Bureaucrat(const std::string &name, size_t grade);
 			~Bureaucrat();
-
+			class GradeTooHighException : public std::exception
+			{
+				public:
+					char const * what() const throw();
+			};
+			class GradeTooLowException : public std::exception
+			{
+				public:
+					char const * what() const throw();
+			};
 	};
 #endif
