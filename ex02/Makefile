@@ -6,7 +6,7 @@
 #    By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/01 19:32:08 by aborboll          #+#    #+#              #
-#    Updated: 2021/12/02 19:44:44 by aborboll         ###   ########.fr        #
+#    Updated: 2021/12/04 23:01:04 by aborboll         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ COUNTER				= 	0
 COLUMNS				=	$(shell stty size | cut -d" " -f2)
 
 # Mandatory part
-SRCS				=	main.cpp Bureaucrat.cpp Form.cpp
+SRCS				=	main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 SOURCES				=	$(SRCS)
 
 # Mandatory Objects
