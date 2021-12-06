@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:39:09 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/02 19:44:26 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/06 10:41:04 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,18 @@ void	Form::levelDownGrade(void)
 	_grade++;
 }
 
+void	Form::execute(Bureaucrat const & executor) const
+{
+	(void)executor;
+	std::cout << "Base Form::execute method called" << std::endl;
+}
+
 // Stream out operator
 std::ostream & operator<<(std::ostream & stream , Form & form)
 {
 	stream
 		<< form.getName().c_str() << std::endl
 		<< form.getGrade() << std::endl
-		<< form.neededGrade() << std::endl;
+		<< form.neededGrade();
 	return stream;
 }

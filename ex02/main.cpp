@@ -6,12 +6,15 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 19:32:05 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/02 19:32:33 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/06 10:39:48 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main(void)
 {
@@ -23,7 +26,7 @@ int main(void)
 	// First part (Valid one!) //
 	/////////////////////////////
 	std::cout << "-----------------------" << std::endl <<
-		"First part (Valid one!)" << std::endl << "-----------------------" << std::endl;
+		"1: part (Valid one!)" << std::endl << "-----------------------" << std::endl;
 	try
 	{
 		Bureaucrat one("one", 1);
@@ -37,7 +40,7 @@ int main(void)
 	// Second part //
 	/////////////////
 	std::cout << "------------------------------------------------" << std::endl <<
-		"Second part (Invalid constructor too low one!)" << std::endl << "------------------------------------------------" << std::endl;
+		"2: part (Invalid constructor too low one!)" << std::endl << "------------------------------------------------" << std::endl;
 	try
 	{
 		Bureaucrat two("one", 151);
@@ -51,7 +54,7 @@ int main(void)
 	// Third part //
 	////////////////
 	std::cout << "------------------------------------------------" << std::endl <<
-		"Third part (Invalid constructor too hight one!)" << std::endl << "------------------------------------------------" << std::endl;
+		"3: part (Invalid constructor too hight one!)" << std::endl << "------------------------------------------------" << std::endl;
 	try
 	{
 		Bureaucrat two("one", 0);
@@ -65,7 +68,7 @@ int main(void)
 	// Furth part //
 	////////////////
 	std::cout << "----------------------------------------" << std::endl <<
-		"Furth part (Invalid downGrade!)" << std::endl << "----------------------------------------" << std::endl;
+		"4: part (Invalid downGrade!)" << std::endl << "----------------------------------------" << std::endl;
 	try
 	{
 		Bureaucrat two("one", 150);
@@ -80,7 +83,7 @@ int main(void)
 	// Fifth part //
 	////////////////
 	std::cout << "----------------------------------------" << std::endl <<
-		"Fifth part (Invalid upGrade!)" << std::endl << "----------------------------------------" << std::endl;
+		"5: part (Invalid upGrade!)" << std::endl << "----------------------------------------" << std::endl;
 	try
 	{
 		Bureaucrat two("one", 1);
@@ -95,7 +98,7 @@ int main(void)
 	///////////////////////////////////////////////-----1----////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
 	std::cout << "----------------------------------------" << std::endl <<
-		"Six part (Valid form)" << std::endl << "----------------------------------------" << std::endl;
+		"6: part (Valid form)" << std::endl << "----------------------------------------" << std::endl;
 	try
 	{
 		Form valid("one", 1, 5);
@@ -107,7 +110,7 @@ int main(void)
 	}
 
 	std::cout << "------------------------------------------------" << std::endl <<
-		"Seventh part (Invalid form constructor too low!)" << std::endl << "------------------------------------------------" << std::endl;
+		"7: part (Invalid form constructor too low!)" << std::endl << "------------------------------------------------" << std::endl;
 	try
 	{
 		Form valid("one", 151, 10);
@@ -119,7 +122,7 @@ int main(void)
 	}
 
 	std::cout << "------------------------------------------------" << std::endl <<
-		"Eighth part (Invalid form constructor too high!)" << std::endl << "------------------------------------------------" << std::endl;
+		"8: part (Invalid form constructor too high!)" << std::endl << "------------------------------------------------" << std::endl;
 	try
 	{
 		Form valid("one", 0, 100);
@@ -131,14 +134,14 @@ int main(void)
 	}
 
 	std::cout << "------------------------------------------------" << std::endl <<
-		"Ninth part (Invalid bureaucrat sign!)" << std::endl << "------------------------------------------------" << std::endl;
+		"9: part (Invalid bureaucrat sign!)" << std::endl << "------------------------------------------------" << std::endl;
 	Form form("form1", 1, 3);
 	std::cout << form << std::endl;
 	Bureaucrat bureaucrat("bureaucrat1", 1);
 	bureaucrat.signForm(form);
 
 	std::cout << "------------------------------------------------" << std::endl <<
-		"Tenth part (Invalid form beSigned!)" << std::endl << "------------------------------------------------" << std::endl;
+		"10: part (Invalid form beSigned!)" << std::endl << "------------------------------------------------" << std::endl;
 	try
 	{
 		Form form2("form2", 1, 3);
@@ -151,6 +154,22 @@ int main(void)
 		std::cerr << e.what() << '\n';
 	}
 
-	std::cout << "End" << std::endl;
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////-----2----////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////
+	std::cout << "--------------------------------------------" << std::endl <<
+		"11: part (Presedential Pardon)" << std::endl << "--------------------------------------------" << std::endl;
+	try
+	{
+		PresidentialPardonForm presidentialForm("trump");
+		std::cout << presidentialForm << std::endl;
+		Bureaucrat presedentialBureaucrat("presedentialBureaucrat", 10);
+		presidentialForm.execute(presedentialBureaucrat);
+	}
+	catch(std::exception & e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << "---------------------------End---------------------------" << std::endl;
 	return (0);
 }

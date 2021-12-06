@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:39:12 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/02 19:34:50 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/06 10:41:47 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@
 			void	beSigned(Bureaucrat bureaucrat);
 			bool	isSigned();
 			Form(const std::string &name, size_t grade, size_t neededGrade);
-			~Form();
+			virtual ~Form();
 			class GradeTooHighException : public std::exception
 			{
 				public:
@@ -46,6 +46,7 @@
 				public:
 					char const * what() const throw();
 			};
+		 	virtual void execute(Bureaucrat const & executor) const;
 	};
 	std::ostream & operator<<(std::ostream & stream , Form & form);
 #endif

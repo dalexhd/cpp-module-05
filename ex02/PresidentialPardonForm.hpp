@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:47:24 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/04 22:55:38 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/06 10:40:21 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,13 @@
 	#define A_PRESIDENTIAL_PARDON_FORM_H
 	class PresidentialPardonForm: public Form
 	{
+		private:
+			std::string	target;
 		protected:
 		public:
-			PresidentialPardonForm(void);
+			void execute(Bureaucrat const & executor) const;
+			std::string	getTarget(void) const;
+			PresidentialPardonForm(std::string target);
 			~PresidentialPardonForm();
-			void action(void);
 	};
 #endif
