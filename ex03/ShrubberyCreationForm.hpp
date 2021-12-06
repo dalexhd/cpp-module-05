@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:47:36 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/06 12:16:38 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/06 16:59:30 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@
 						return msg.c_str();
 					}
 			};
-			ShrubberyCreationForm(std::string target);
+			ShrubberyCreationForm(std::string const & destination);
 			~ShrubberyCreationForm();
 	};
 #endif

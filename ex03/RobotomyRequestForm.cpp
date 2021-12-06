@@ -6,13 +6,13 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:47:27 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/06 11:28:45 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/06 17:01:35 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target): Form("RobotomyRequestForm", 72, 45), target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string const & target): Form("RobotomyRequestForm", 72, 45), target(target)
 {
 	std::cout << "RobotomyRequestForm default constructor called" << std::endl;
 }
