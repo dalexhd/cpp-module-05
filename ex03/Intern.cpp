@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 19:32:05 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/06 12:44:38 by aborboll         ###   ########.fr       */
+/*   Created: 2021/12/06 12:30:42 by aborboll          #+#    #+#             */
+/*   Updated: 2021/12/06 12:48:06 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
-#include "Bureaucrat.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
 #include "Intern.hpp"
 
-int main(void)
+Form *Intern::makeForm(std::string const & name, std::string const & target)
 {
-	Intern	someRandomIntern;
-	Form*	rrf;
+	(void)target;
+	Form *form = new Form(name, 1, 5);
+	return (form);
+}
 
-	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-
-	std::cout << "---------------------------End---------------------------" << std::endl;
-	return (0);
+Intern::~Intern()
+{
+	std::cout << "Intern destructor called" << std::endl;
 }

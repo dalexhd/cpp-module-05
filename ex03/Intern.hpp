@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 19:32:05 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/06 12:44:38 by aborboll         ###   ########.fr       */
+/*   Created: 2021/12/06 12:25:04 by aborboll          #+#    #+#             */
+/*   Updated: 2021/12/06 12:48:04 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Incluimos las librerias esenciales.
+*/
+#include <iostream>
+#include <string.h>
 #include "Form.hpp"
-#include "Bureaucrat.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "Intern.hpp"
 
-int main(void)
-{
-	Intern	someRandomIntern;
-	Form*	rrf;
-
-	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-
-	std::cout << "---------------------------End---------------------------" << std::endl;
-	return (0);
-}
+#ifndef A_INTERN_H
+	#define A_INTERN_H
+	class Intern
+	{
+		private:
+		public:
+			Form *makeForm(std::string const & name, std::string const & target);
+			~Intern();
+	};
+#endif
