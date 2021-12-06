@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:39:12 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/06 11:31:55 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/06 11:59:13 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,11 @@
 					char const * what() const throw();
 			};
 			class NotSigned : public std::exception
+			{
+				public:
+					char const * what() const throw();
+			};
+			class FileError : public std::exception
 			{
 				public:
 					char const * what() const throw();

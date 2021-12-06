@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:47:36 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/06 11:32:27 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/06 12:09:30 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 */
 #include <iostream>
 #include <string.h>
+#include <fstream>
 #include "Form.hpp"
 
 #ifndef A_SHRUBBERY_CREATION_FORM_H
@@ -28,6 +29,21 @@
 		public:
 			void execute(Bureaucrat const & executor) const;
 			std::string	getTarget(void) const;
+			class TemplateFileName : public std::exception
+			{
+				public:
+					char const * what() const throw();
+			};
+			class FileError : public std::exception
+			{
+				std::string	msg;
+				public:
+					FileError(const std::string& error): msg(error) {}
+					virtual const char * what() const throw()
+					{
+						return msg.c_str();
+					}
+			};
 			ShrubberyCreationForm(std::string target);
 			~ShrubberyCreationForm();
 	};
