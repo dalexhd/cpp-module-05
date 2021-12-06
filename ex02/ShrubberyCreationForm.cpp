@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:47:32 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/06 12:15:19 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/06 12:19:17 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,11 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	std::cout << "ShrubberyCreationForm destructor called" << std::endl;
 }
 
-char const *ShrubberyCreationForm::TemplateFileName::what() const throw()
-{
-	return ("trees file out is same as template!");
-}
-
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	std::ifstream in_stream;
 	std::ofstream out_stream;
-	std::string content;
-	std::string str;
+	std::string content, str;
 	const std::string readfile = "shrubbery_template";
 	const std::string destFile = this->getTarget() + "_shrubbery";
 
@@ -40,13 +34,11 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		throw GradeTooLowException();
 	else if (!this->isSigned())
 		throw NotSigned();
-	else if (this->getTarget() == readfile)
-		throw TemplateFileName();
 	in_stream.open(readfile);
 	if (in_stream.fail())
 	{
 		in_stream.close();
-		throw FileError("Could not open " + readfile + " file.");
+		throw FileError("Could not open " + readfile + " file: " + strerror(errno));
 	}
 	while (std::getline(in_stream, str))
 		content += str + "\n";
@@ -54,7 +46,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	if (out_stream.fail())
 	{
 		out_stream.close();
-		throw FileError("Could not open file " + destFile + " file.");
+		throw FileError("Could not open file " + destFile + " file: " + strerror(errno));
 	}
 	out_stream << content;
 	out_stream.close();
