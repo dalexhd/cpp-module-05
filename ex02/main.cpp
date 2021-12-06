@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 19:32:05 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/06 11:34:48 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/06 11:36:43 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ int main(void)
 
 	////////////////////////////////////////////////
 	std::cout << "--------------------------------------------" << std::endl <<
-		"5: part (Shrubbery Grade Low Error)" << std::endl << "--------------------------------------------" << std::endl;
+		"7: part (Shrubbery Grade Low Error)" << std::endl << "--------------------------------------------" << std::endl;
 	try
 	{
 		ShrubberyCreationForm shrubberyRequestForm("trump");
@@ -125,7 +125,7 @@ int main(void)
 	}
 
 	std::cout << "--------------------------------------------" << std::endl <<
-		"6: part (Shrubbery Grade Not signed Error)" << std::endl << "--------------------------------------------" << std::endl;
+		"8: part (Shrubbery Grade Not signed Error)" << std::endl << "--------------------------------------------" << std::endl;
 	try
 	{
 		ShrubberyCreationForm shrubberyRequestForm("trump");
@@ -139,7 +139,7 @@ int main(void)
 	}
 
 	std::cout << "--------------------------------------------" << std::endl <<
-		"7: part (Shrubbery Pardon Okay)" << std::endl << "--------------------------------------------" << std::endl;
+		"9: part (Shrubbery Pardon Okay)" << std::endl << "--------------------------------------------" << std::endl;
 	try
 	{
 		ShrubberyCreationForm shrubberyRequestForm("trump");
