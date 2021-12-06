@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 19:31:59 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/02 19:19:06 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/06 11:31:15 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Bureaucrat::Bureaucrat(const std::string &name, size_t grade): _name(name), _grade(grade)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Bureaucrat default constructor called" << std::endl;
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else if (grade > 150)
@@ -42,7 +42,7 @@ std::string	Bureaucrat::getName(void)
 	return (_name);
 }
 
-size_t	Bureaucrat::getGrade(void)
+size_t	Bureaucrat::getGrade(void) const
 {
 	return (_grade);
 }

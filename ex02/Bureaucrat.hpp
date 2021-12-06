@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 19:32:02 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/02 19:05:52 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/06 10:55:13 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 			void	levelUpGrade(void);
 			void	levelDownGrade(void);
 			std::string	getName(void);
-			size_t	getGrade(void);
+			size_t	getGrade(void) const;
 			void	signForm(Form form);
 			Bureaucrat(const std::string &name, size_t grade);
 			~Bureaucrat();

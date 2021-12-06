@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:39:09 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/06 10:41:04 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/06 11:03:19 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ char const *Form::GradeTooLowException::what() const throw()
 	return ("Form grade to low!");
 }
 
+char const *Form::NotSigned::what() const throw()
+{
+	return ("Form is not signed!");
+}
+
 Form::~Form()
 {
 	std::cout << "Form destructor called" << std::endl;
@@ -46,12 +51,12 @@ size_t	Form::getGrade(void)
 	return (_grade);
 }
 
-size_t	Form::neededGrade(void)
+size_t	Form::neededGrade(void) const
 {
 	return (_neededGrade);
 }
 
-bool	Form::isSigned(void)
+bool	Form::isSigned(void) const
 {
 	return (isSignned);
 }

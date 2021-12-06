@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:47:36 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/06 10:40:57 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/06 11:32:27 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 		private:
 			std::string	target;
 		protected:
-			void execute(Bureaucrat const & executor) const;
 		public:
+			void execute(Bureaucrat const & executor) const;
 			std::string	getTarget(void) const;
 			ShrubberyCreationForm(std::string target);
 			~ShrubberyCreationForm();

@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:47:29 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/06 10:40:51 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/06 11:24:25 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@
 	{
 		private:
 			std::string	target;
-		protected:
-			void execute(Bureaucrat const & executor) const;
 		public:
+			void execute(Bureaucrat const & executor) const;
 			std::string	getTarget(void) const;
 			RobotomyRequestForm(std::string target);
 			~RobotomyRequestForm();

@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:47:27 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/06 10:40:49 by aborboll         ###   ########.fr       */
+/*   Updated: 2021/12/06 11:28:45 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	(void)executor;
+	if (executor.getGrade() > this->neededGrade())
+		throw GradeTooLowException();
+	else if (!this->isSigned())
+		throw NotSigned();
+	std::cout << C_BLUE <<  "Bzzzz or Zzzz " << C_X << std::endl;
 	std::cout << this->getTarget() << " has been robotomized successfully 50% of the time." << std::endl;
 }
 
